@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class Management {
 
-    static Reader reader = new Reader();
-    static Book[] books = new Book[15];
+     Reader reader;
+    Book[] books = new Book[15];
 
     //ham kiem tra so luong sach cua tung dau sach khong duoc muon qua 3 quyen
     private boolean bookTitle(Book[] books, String title) {
@@ -28,7 +28,7 @@ public class Management {
     }
 
     //  ham them sach da muon vao danh sach muon
-    private void addBook(Book book, Book[] books) {
+    private void addBook(Book book) {
         for (int i = 0; i < books.length; i++) {
             if (books[i] == null) {
                 books[i] = book;
@@ -37,14 +37,11 @@ public class Management {
         }
     }
 
-//    ham kiem tra cac ma cua dau sach se co:
-
-
     // ham quan ly muon sach
     public void borrowBook(Reader reader, Book[] books) {
         this.reader = reader;
         Scanner input = new Scanner(System.in);
-        int n;
+        int n=0;
         do {
             System.out.print("nhap vao so luong sach ma ban doc " + reader.getReaderId() + " muon: ");
             n = input.nextInt();
@@ -58,7 +55,7 @@ public class Management {
             }
             if (this.books[i] == null) {
                 do {
-                    System.out.println("nhap ma sach thu " + index + "ma ban doc muon: ");
+                    System.out.println("nhap ma sach thu " + index + " ma ban doc muon: ");
                     int id = input.nextInt();
                     if (searchBook(books, id) == null) {
                         System.out.println("khong ton tai ID nay, Nhap lai id.");
@@ -67,7 +64,7 @@ public class Management {
                     index++;
                     Book b = searchBook(books, id);
                     if (bookTitle(this.books, b.getSpecialized())) {
-                        addBook(b, this.books);
+                        addBook(b);
                         break;
                     } else {
                         System.out.println("qua so luong sach cua 1 dau sach, hay chon sach khac");

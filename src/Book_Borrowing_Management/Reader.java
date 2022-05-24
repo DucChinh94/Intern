@@ -2,12 +2,8 @@ package Book_Borrowing_Management;
 
 import java.util.Scanner;
 
-public class Reader {
+public class Reader extends Person {
     private static int autoId = -1;
-    private int readerId;
-    private String fullName;
-    private String address;
-    private String phoneNumber;
     private String readerType;
 
     public Reader() {
@@ -15,34 +11,6 @@ public class Reader {
             autoId = 10000;
             this.readerId = autoId;
         } else this.readerId = ++autoId;
-    }
-
-    public int getReaderId() {
-        return readerId;
-    }
-
-    public String getFullName() {
-        return fullName;
-    }
-
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
     }
 
     public String getReaderType() {
@@ -65,12 +33,7 @@ public class Reader {
     }
 
     public void inputReader() {
-        System.out.print("nhap ten ban doc: ");
-        this.setFullName(new Scanner(System.in).nextLine());
-        System.out.print("nhap dia chi ban doc: ");
-        this.setAddress(new Scanner(System.in).nextLine());
-        System.out.print("nhap so dien thoai ban doc: ");
-        this.setPhoneNumber(new Scanner(System.in).nextLine());
+        super.inputReader();
         System.out.println("chon kieu ban doc ");
         System.out.println("1. sinh vien");
         System.out.println("2. giao vien");

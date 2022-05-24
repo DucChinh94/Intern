@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Management {
 
-     Reader reader;
+    Reader reader;
     Book[] books = new Book[15];
 
     //ham kiem tra so luong sach cua tung dau sach khong duoc muon qua 3 quyen
@@ -41,7 +41,7 @@ public class Management {
     public void borrowBook(Reader reader, Book[] books) {
         this.reader = reader;
         Scanner input = new Scanner(System.in);
-        int n=0;
+        int n = 0;
         do {
             System.out.print("nhap vao so luong sach ma ban doc " + reader.getReaderId() + " muon: ");
             n = input.nextInt();

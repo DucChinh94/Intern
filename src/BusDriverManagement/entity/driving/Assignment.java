@@ -1,0 +1,34 @@
+package BusDriverManagement.entity.driving;
+
+import BusDriverManagement.entity.Route;
+
+import java.io.Serializable;
+
+public class Assignment implements Serializable {
+   private Route route;
+   private int routeNumber;
+
+    public Route getRoute() {
+        return route;
+    }
+
+    public void setRoute(Route route) {
+        this.route = route;
+    }
+
+    public int getRouteNumber() {
+        return routeNumber;
+    }
+
+    public void setRouteNumber(int routeNumber) {
+        this.routeNumber = routeNumber;
+    }
+
+    @Override
+    public String toString() {
+        return "Assignment{" +
+                "route=" + route +
+                ", routeNumber=" + routeNumber +
+                '}';
+    }
+}

@@ -41,6 +41,14 @@ public class DriverService {
         }
     }
 
+    public static Driver findDriverById(int driverId) {
+        for (Driver driver : driverList) {
+            if (driver.getDriverId() == driverId)
+                return driver;
+        }
+        return null;
+    }
+
     public void initializeDriverData() {
         List<Driver> driverList = fileUtil.readDataFromFile(DriverService.DRIVERDATAFILE);
         if (driverList != null) {

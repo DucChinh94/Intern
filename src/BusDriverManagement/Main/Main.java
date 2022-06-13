@@ -43,7 +43,8 @@ public class Main {
                     routeService.showRoute();
                     break;
                 case 5:
-
+                    assigmentService.creatDrivingManagement();
+                    assigmentService.showDrivingManagement();
                     break;
                 case 6:
 
@@ -63,7 +64,7 @@ public class Main {
 
     public static void initializeData() {
         driverService.initializeDriverData();
-        routeService.initializeLineData();
+        routeService.initializeRouteData();
         assigmentService.initializeAssignmentManagementData();
     }
 }

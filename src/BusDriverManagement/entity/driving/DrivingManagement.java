@@ -5,12 +5,17 @@ import BusDriverManagement.entity.Driver;
 import java.io.Serializable;
 import java.util.List;
 
-public class DrivingManagement implements Serializable {
+    public class DrivingManagement implements Serializable {
 
     private Driver driver;
     private List<Assignment> assignmentList;
 
-    public Driver getDriver() {
+        public DrivingManagement(Driver driver, List<Assignment> assignmentList) {
+            this.driver = driver;
+            this.assignmentList = assignmentList;
+        }
+
+        public Driver getDriver() {
         return driver;
     }
 

@@ -8,6 +8,11 @@ public class Assignment implements Serializable {
    private Route route;
    private int routeNumber;
 
+    public Assignment(Route route, int routeNumber) {
+        this.route = route;
+        this.routeNumber = routeNumber;
+    }
+
     public Route getRoute() {
         return route;
     }

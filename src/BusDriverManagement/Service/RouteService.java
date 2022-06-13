@@ -41,7 +41,15 @@ public class RouteService {
         }
     }
 
-    public void initializeLineData() {
+    public static Route findRouteById(int routeId) {
+        for (Route route : routeList) {
+            if (route.getRouteId() == routeId)
+                return route;
+        }
+        return null;
+    }
+
+    public void initializeRouteData() {
         List<Route> routeList = fileUtil.readDataFromFile(ROUTEDATAFILE);
         if (routeList != null) {
             Route.autoId = routeList.get(routeList.size() - 1).getRouteId() + 1;
